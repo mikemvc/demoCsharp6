@@ -23,6 +23,14 @@ namespace demoCsharp6Console
 
         }
         #endregion
+
+        #region demo3
+        public class member
+        {
+            public int id { get; set; }
+            public string name { get; set; }
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region demo1 nameof
@@ -41,6 +49,17 @@ namespace demoCsharp6Console
             //string message2 = $"{m.name}的員工編號為{m.id}號";
             //Console.WriteLine(message2);
             #endregion
+
+            #region demo3 Null propagation
+            // 首先宣告一個member物件，並將他設為NULL來模擬取不到值的狀況
+            member m = null;
+            // 接者直接取他的ID值，此時發現沒有印出值
+            Console.WriteLine($"kui的員工編號為 {m?.id} 號");
+            // 再次存取他的name值，如果取不到，就給他一個預設值『kui』
+            Console.WriteLine($"員工七號的姓名為{m?.name ?? "kui"}，號稱『台中金成舞』");
+            #endregion
+
+            Console.Read();
         }
     }
 }
