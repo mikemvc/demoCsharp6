@@ -28,6 +28,19 @@ namespace demoCsharp6Console
             #region demo1 nameof
             //string connString = loadConnectionString("");
             #endregion
+
+            #region deom2 string with $
+            //var N = 10;
+            // 以前的寫法
+            //string message = string.Format("WEB組所有成員在四月加薪，調整幅度為原薪水的{0}倍", N);            
+            // C# 6 的寫法
+            //string message = $"WEB組所有成員在四月加薪，調整幅度為原薪水的{N}倍";
+            //Console.WriteLine(message);
+
+            //var m = new member { id = 7, name = "Mike" };
+            //string message2 = $"{m.name}的員工編號為{m.id}號";
+            //Console.WriteLine(message2);
+            #endregion
         }
     }
 }
