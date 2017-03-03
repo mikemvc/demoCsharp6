@@ -25,12 +25,32 @@ namespace demoCsharp6Console
         #endregion
 
         #region demo3
+        //public class member
+        //{
+        //    public int id { get; set; }
+        //    public string name { get; set; }
+        //}
+        #endregion
+
+        #region demo4
         public class member
         {
             public int id { get; set; }
             public string name { get; set; }
+            public string fullName { get; set; }
+            // C# 6.0 的自動實作屬性 (在以前必須指定私有欄位才能設定屬性的預設值)
+            public string firstName { get; } = "mike";
+            /* 以前的寫法為 
+             *  private string _lastName = "mike";
+             *  public string lastName { get { return _lastName; } }
+             */
+            // 使用表示式來作為屬性初始值
+            public string lastName => fullName.Split(',')[1];
         }
         #endregion
+
+
+
         static void Main(string[] args)
         {
             #region demo1 nameof
@@ -51,12 +71,22 @@ namespace demoCsharp6Console
             #endregion
 
             #region demo3 Null propagation
-            // 首先宣告一個member物件，並將他設為NULL來模擬取不到值的狀況
-            member m = null;
-            // 接者直接取他的ID值，此時發現沒有印出值
-            Console.WriteLine($"kui的員工編號為 {m?.id} 號");
-            // 再次存取他的name值，如果取不到，就給他一個預設值『kui』
-            Console.WriteLine($"員工七號的姓名為{m?.name ?? "kui"}，號稱『台中金成舞』");
+            //// 首先宣告一個member物件，並將他設為NULL來模擬取不到值的狀況
+            //member m = null;
+            //// 接者直接取他的ID值，此時發現沒有印出值
+            //Console.WriteLine($"kui的員工編號為 {m?.id} 號");
+            //// 再次存取他的name值，如果取不到，就給他一個預設值『kui』
+            //Console.WriteLine($"員工七號的姓名為{m?.name ?? "kui"}，號稱『台中金成舞』");
+            #endregion
+
+            #region demo4 Expression Bodied Auto-Properties 自動的屬性初始化設定
+            //var m = new member { id = 1, name = "", fullName = "mike,wang" };
+            //Console.WriteLine(m.lastName);  // 印出自動實作屬性的 lastName
+            //// 使用反射方法，來取得物件的所有屬性(property)，不包含欄位(field)
+            //Type type = m.GetType();
+            //foreach (var property in type.GetProperties())
+            //    Console.WriteLine($"屬性：{property.Name}");
+            //Console.WriteLine($"firstName沒有定義，自動實作屬性的初始值為 {m.firstName}");
             #endregion
 
             Console.Read();
