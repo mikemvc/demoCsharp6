@@ -39,7 +39,7 @@ namespace demoCsharp6Console
             public string name { get; set; }
             public string fullName { get; set; }
             // C# 6.0 的自動實作屬性 (在以前必須指定私有欄位才能設定屬性的預設值)
-            public string firstName { get; } = "mike";
+            public string firstName { get; set; } = "mike";
             /* 以前的寫法為 
              *  private string _lastName = "mike";
              *  public string lastName { get { return _lastName; } }
@@ -80,13 +80,13 @@ namespace demoCsharp6Console
             #endregion
 
             #region demo4 Expression Bodied Auto-Properties 自動的屬性初始化設定
-            //var m = new member { id = 1, name = "", fullName = "mike,wang" };
-            //Console.WriteLine(m.lastName);  // 印出自動實作屬性的 lastName
-            //// 使用反射方法，來取得物件的所有屬性(property)，不包含欄位(field)
-            //Type type = m.GetType();
-            //foreach (var property in type.GetProperties())
-            //    Console.WriteLine($"屬性：{property.Name}");
-            //Console.WriteLine($"firstName沒有定義，自動實作屬性的初始值為 {m.firstName}");
+            var m = new member { id = 1, name = "", fullName = "mike,wang" };
+            Console.WriteLine(m.lastName);  // 印出自動實作屬性的 lastName
+            // 使用反射方法，來取得物件的所有屬性(property)，不包含欄位(field)
+            Type type = m.GetType();
+            foreach (var property in type.GetProperties())
+                Console.WriteLine($"屬性：{property.Name}");
+            Console.WriteLine($"firstName沒有定義，自動實作屬性的初始值為 {m.firstName}");
             #endregion
 
             Console.Read();

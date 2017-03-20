@@ -1,0 +1,437 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>New Age - Start Bootstrap Theme</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="~/Content/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="~/Content/vendor/device-mockups/device-mockups.min.css">
+    <!-- Theme CSS -->
+    <link href="~/Content/css/new-age.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body id="page-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#demo-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Home <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">C# 6</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="demo-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#demo1">DEMO1</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#demo2">DEMO2</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#demo3">DEMO3</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#demo4">DEMO4</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="header-content">
+                        <div class="header-content-inner">
+                            @*<h1>New Age is an app landing page that will help you beautifully showcase your new mobile app, or anything else!</h1>*@
+                            <h1>C# 6.0 An Introduction</h1>
+                            <p class="lead">
+                                本次分享的主題為<a target="_blank" href="https://msdn.microsoft.com/zh-tw/magazine/dn879355.aspx"> C# 6.0</a>，而C# 6.0本身在架構上，並沒有做很大的改變，而是加強了現有的一些方法以及類別，讓程式的撰寫更加流暢。<br />
+                                所以本文注重在介紹C# 6.0新增的一些語法(糖)，並提供部分的範例，與實際上應用的情境。<br />
+                                最後，本文中的所有範例，已部屬到GitHub上，來提供範例的下載<br /><br />
+                            </p>
+                            <a href="#demo1" class="btn btn-outline btn-xl page-scroll"><h4>就讓我們看下去!</h4></a>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="col-sm-5">
+                        <div class="device-container">
+                                <div class="device-mockup iphone6_plus portrait white">
+                                    <div class="device">
+                                        <div class="screen">
+                                            <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                            <img src="img/demo-screen-1.jpg" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="button">
+                                            <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>*@
+            </div>
+        </div>
+    </header>
+    <section id="demo1" class="bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Demo1 nameof()</h2>
+                    <h3>介紹：</h3>
+                    <p>
+                        此語法是用來取得參數名稱本身的字串所使用，避免寫程式的過程中，有打字錯誤，<br />
+                        或是複製剪貼的時候，字詞有遺漏的意外發生。
+                    </p>
+                    <h3>應用情境：</h3>
+                    <p>
+                        在自訂的方法或副程式中，有參數傳遞的例外發生(通常是格式錯誤或是忘了傳值)。<br />
+                        此時，我們會想要在例外的提示中，明確的告知遺漏的參數為哪一個，來簡化debug的過程
+                    </p>
+                    <h3>範例：</h3>
+                    <img id="img1" src="~/Content/Images/demo_1_001.png" style="width:600px" />
+                    <div id="myModal_img1" class="modal fade" role="dialog">
+                        <div class="modal-dialog  modal-lg" style="width:80%">
+                            <div class="modal-content">
+                                <div class="modal-body" id="SqlWhoDetails">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <img src="~/Content/Images/demo_1_001.png" style="width:100%" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <hr />
+                    <h3 id="result1" class="text-danger">結果</h3>
+                    <div id="myModal_result1" class="modal fade" role="dialog">
+                        <div class="modal-dialog  modal-lg" style="width:80%">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title text-danger" name="title">執行結果</h4>
+                                </div>
+                                <div class="modal-body" id="SqlWhoDetails">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <img src="~/Content/Images/demo_1_002.png" style="width:100%" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br /><br />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="demo2" class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <h2>Demo2 字串相連</h2>
+
+                    <h3>介紹：</h3>
+                    <p>
+                        實務上我們在做字串相連的時候，常常會使用到『+=』，或是使用『string.Format()』方法，<br />
+                        在C#6.0有了更簡單的使用方式，就是採用『$』以及變數的名稱方式來做串接
+                    </p>
+
+                    <h3>應用情境：</h3>
+                    <p>
+                        今天有一些靜態的文字要與動態的變數來做字串的串接動作。<br />
+                        e.g. 有一個字串為"WEB組所有成員在四月加薪，調整幅度為原薪水的N倍"，<br />
+                        此時我們就會將變數帶入N，這時候就可以採用『$』 + 變數，
+                        來簡易的做到字串串接的效果
+                    </p>
+
+                    <h3>範例：</h3>
+                    <img id="img2" src="~/Content/Images/demo_2_001.png" width="600" />
+                    <div id="myModal_img2" class="modal fade" role="dialog">
+                        <div class="modal-dialog  modal-lg" style="width:850px">
+                            <div class="modal-content">
+                                <div class="modal-body" id="SqlWhoDetails">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <img src="~/Content/Images/demo_2_001.png" width="100%" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <hr />
+                    <h3 id="result2">結果</h3>
+                    <div id="myModal_result2" class="modal fade" role="dialog">
+                        <div class="modal-dialog  modal-lg" style="width:850px">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title" name="title">執行結果</h4>
+                                </div>
+                                <div class="modal-body" id="SqlWhoDetails">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <img src="~/Content/Images/demo_2_002.png" width="600" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br /><br />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="demo3" class="bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <h2>Demo3 NULL 條件運算的加強</h2>
+
+                    <h3>介紹：</h3>
+                    <p>
+                        通常我們在取得某個物件的屬性的時候，為了避免該物件取出時，發生NULL參考的錯誤，<br />
+                        我們會先將該物件實體做一個是否NULL的條件判斷，如果該物件不等於NULL時，<br />
+                        我們才會繼續取得他的屬性，現在C# 6.0有更簡易的寫法囉！
+                    </p>
+
+                    <h3>應用情境：</h3>
+                    <p>
+                        假設有一個類別為member，而這個類別有兩個屬性，分別為id與name，<br />
+                        而現在有一個member物件的實體，但是我們並不確定該物件是否有值，<br />
+                        我們就用新的寫法，來直接取得該物件的屬性值，<br />
+                        就算該物件為NULL，也不會發生例外，並且可以給予一個預設值
+                    </p>
+
+                    <h3>範例：</h3>
+                    <img id="img3" src="~/Content/Images/demo_3_001.png" width="600" />
+                    <div id="myModal_img3" class="modal fade" role="dialog">
+                        <div class="modal-dialog  modal-lg" style="width:850px">
+                            <div class="modal-content">
+                                <div class="modal-body" id="SqlWhoDetails">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <img src="~/Content/Images/demo_3_001.png" style="width:100%" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <hr />
+                    <h3 id="result3">結果</h3>
+                    <div id="myModal_result3" class="modal fade" role="dialog">
+                        <div class="modal-dialog  modal-lg" style="width:850px">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title text-danger" name="title">執行結果</h4>
+                                </div>
+                                <div class="modal-body" id="SqlWhoDetails">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <img src="~/Content/Images/demo_3_002.png" width="600" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br /><br />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="demo4" class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <h2>Demo4 Expression Bodied Auto-Properties <br />自動的屬性初始化設定</h2>
+
+                    <h3>介紹：</h3>
+                    <p>
+                        通常我們在建立類別的時候，會同時建立屬性property、欄位field與方法，<br />
+                        在早期的C#版本中，屬性是無法直接設定初始值，如果要設定屬性的初始值，<br />
+                        我們必須另外建立一個私有欄位來做對應，現在C# 6有了全新的作法......
+                    </p>
+
+                    <h3>應用情境：</h3>
+                    <p>
+                        有一個靜態的類別，其中有一個name屬性我們想要設定他的『初始值』為mike，<br />
+                        但是又不想要設定一個私有的欄位(_name)來做對應，<br />
+                        此時我們就可以用自動屬性初始化來達成。<br />
+                    </p>
+
+                    <h3>範例：</h3>
+                    <img id="img4" src="~/Content/Images/demo_4_001.png" width="600" />
+                    <div id="myModal_img4" class="modal fade" role="dialog">
+                        <div class="modal-dialog  modal-lg" style="width:850px">
+                            <div class="modal-content">
+                                <div class="modal-body" id="SqlWhoDetails">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <img src="~/Content/Images/demo_4_001.png" style="width:100%;" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <hr />
+                    <h3 id="result4">結果</h3>
+                    <div id="myModal_result4" class="modal fade" role="dialog">
+                        <div class="modal-dialog  modal-lg" style="width:850px">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title" name="title">執行結果</h4>
+                                </div>
+                                <div class="modal-body" id="SqlWhoDetails">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <img src="~/Content/Images/demo_4_002.png" width="600" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br /><br />
+                </div>
+            </div>
+        </div>
+    </section>
+    @*<section class="cta">
+            <div class="cta-content">
+                <div class="container">
+                    <h2>Stop waiting.<br>Start building.</h2>
+                    <a href="#contact" class="btn btn-outline btn-xl page-scroll">Let's Get Started!</a>
+                </div>
+            </div>
+            <div class="overlay"></div>
+        </section>*@
+    <section id="demoX" class="contact bg-primary">
+        <div class="container">
+            <h2><a href="http://codepen.io/mikemvc/pen/jBrBGj" target="_blank">One more thing! </a><i class="fa fa-heart"></i></h2>
+            @*<ul class="list-inline list-social">
+                <li class="social-twitter">
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li class="social-facebook">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li class="social-google-plus">
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                </li>
+            </ul>*@
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2016 Start Bootstrap. All Rights Reserved.</p>
+            @*<ul class="list-inline">
+                <li>
+                    <a href="#">Privacy</a>
+                </li>
+                <li>
+                    <a href="#">Terms</a>
+                </li>
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+            </ul>*@
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Content/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <!-- Theme JavaScript -->
+    <script src="~/Content/js/new-age.min.js"></script>
+    @*縮圖放大*@
+    <script>
+        $(document).ready(function () {
+            // 圖片放大
+            $("#img1").click(function () {
+                $('#myModal_img1').modal('show');
+            });
+
+            // 結果
+            $("#result1").click(function () {
+                $('#myModal_result1').modal('show');
+            });
+
+            // 圖片放大
+            $("#img2").click(function () {
+                $('#myModal_img2').modal('show');
+            });
+
+            // 結果
+            $("#result2").click(function () {
+                $('#myModal_result2').modal('show');
+            });
+
+            // 圖片放大
+            $("#img3").click(function () {
+                $('#myModal_img3').modal('show');
+            });
+
+            // 結果
+            $("#result3").click(function () {
+                $('#myModal_result3').modal('show');
+            });
+
+            // 圖片放大
+            $("#img4").click(function () {
+                $('#myModal_img4').modal('show');
+            });
+
+            // 結果
+            $("#result4").click(function () {
+                $('#myModal_result4').modal('show');
+            });
+        });
+    </script>
+</body>
+</html>
