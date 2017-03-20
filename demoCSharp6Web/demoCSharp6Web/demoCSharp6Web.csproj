@@ -323,6 +323,7 @@
     <Content Include="Content\vendor\simple-line-icons\fonts\Simple-Line-Icons.woff2" />
     <Content Include="Content\vendor\simple-line-icons\less\simple-line-icons.less" />
     <Content Include="Content\vendor\simple-line-icons\scss\simple-line-icons.scss" />
+    <None Include="Properties\PublishProfiles\demoC6.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
