@@ -159,6 +159,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\new-age.css" />
     <Content Include="Content\css\new-age.min.css" />
+    <Content Include="Content\Images\Csharp.png" />
     <Content Include="Content\Images\demo_1_001.png" />
     <Content Include="Content\Images\demo_1_002.png" />
     <Content Include="Content\Images\demo_2_001.png" />
